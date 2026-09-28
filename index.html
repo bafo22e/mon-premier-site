@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Barbier des Traboules — Barbier à Lyon</title>
+  <meta name="description" content="Barbier traditionnel au cœur de Lyon : coupe homme, taille de barbe, rasage à l'ancienne.">
+  <style>
+    :root {
+      --noir: #1a1a1a;
+      --creme: #f6f1e9;
+      --or: #b8893b;
+      --gris: #6b6b6b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--noir);
+      background: var(--creme);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .conteneur {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* En-tête */
+    header {
+      background: var(--noir);
+      color: var(--creme);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .conteneur {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--or); }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:first-child { margin-left: 0; }
+    nav a:hover { color: var(--or); }
+
+    /* Bannière */
+    .banniere {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                  repeating-linear-gradient(45deg, #2b2b2b 0 20px, #222 20px 40px);
+      color: var(--creme);
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .banniere h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .banniere p {
+      font-size: 1.15rem;
+      color: #ddd;
+      margin-bottom: 32px;
+    }
+
+    .bouton {
+      display: inline-block;
+      background: var(--or);
+      color: #fff;
+      padding: 14px 32px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .bouton:hover { background: #9c7230; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: normal;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .trait {
+      width: 60px;
+      height: 2px;
+      background: var(--or);
+      margin: 0 auto 40px;
+    }
+
+    .apropos p {
+      max-width: 700px;
+      margin: 0 auto 16px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* Tarifs */
+    .tarifs { background: #fff; }
+
+    .liste-tarifs {
+      max-width: 600px;
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    .liste-tarifs li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px dashed #ccc;
+      gap: 12px;
+    }
+
+    .liste-tarifs small {
+      display: block;
+      color: var(--gris);
+      font-size: 0.9rem;
+    }
+
+    .prix {
+      color: var(--or);
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Infos pratiques */
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .carte {
+      background: #fff;
+      padding: 32px;
+      border-top: 3px solid var(--or);
+    }
+
+    .carte h3 {
+      font-weight: normal;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .horaires { width: 100%; border-collapse: collapse; }
+    .horaires td { padding: 4px 0; }
+    .horaires td:last-child { text-align: right; }
+
+    /* Pied de page */
+    footer {
+      background: var(--noir);
+      color: #aaa;
+      text-align: center;
+      padding: 32px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      nav a { margin-left: 12px; font-size: 0.8rem; }
+      .banniere { padding: 80px 20px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="conteneur">
+      <a href="#" class="logo">Le Barbier <span>des Traboules</span></a>
+      <nav>
+        <a href="#apropos">À propos</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="banniere">
+    <h1>Le Barbier des Traboules</h1>
+    <p>Coupe, barbe &amp; rasage à l'ancienne au cœur de Lyon</p>
+    <a href="#contact" class="bouton">Prendre rendez-vous</a>
+  </div>
+
+  <section id="apropos" class="apropos">
+    <div class="conteneur">
+      <h2>Notre maison</h2>
+      <div class="trait"></div>
+      <p>
+        Installé dans les pentes de la Croix-Rousse, notre salon perpétue
+        la tradition du barbier lyonnais : un fauteuil en cuir, une serviette
+        chaude, un rasoir affûté et le temps de bien faire.
+      </p>
+      <p>
+        Que vous veniez pour une coupe classique, un dégradé moderne ou
+        l'entretien de votre barbe, nous vous accueillons dans une ambiance
+        chaleureuse, un café à la main.
+      </p>
+    </div>
+  </section>
+
+  <section id="tarifs" class="tarifs">
+    <div class="conteneur">
+      <h2>Prestations &amp; tarifs</h2>
+      <div class="trait"></div>
+      <ul class="liste-tarifs">
+        <li>
+          <div>Coupe homme<small>Shampoing, coupe et coiffage</small></div>
+          <span class="prix">28 €</span>
+        </li>
+        <li>
+          <div>Taille de barbe<small>Contours au rasoir et soin</small></div>
+          <span class="prix">20 €</span>
+        </li>
+        <li>
+          <div>Rasage à l'ancienne<small>Serviette chaude, rasoir coupe-chou</small></div>
+          <span class="prix">30 €</span>
+        </li>
+        <li>
+          <div>Coupe + barbe<small>La formule complète</small></div>
+          <span class="prix">42 €</span>
+        </li>
+        <li>
+          <div>Coupe enfant<small>Moins de 12 ans</small></div>
+          <span class="prix">18 €</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="conteneur">
+      <h2>Infos pratiques</h2>
+      <div class="trait"></div>
+      <div class="grille">
+        <div class="carte">
+          <h3>Adresse</h3>
+          <p>12 rue des Tables Claudiennes<br>69001 Lyon</p>
+          <p style="margin-top:12px">Métro C — Croix-Paquet</p>
+        </div>
+        <div class="carte">
+          <h3>Horaires</h3>
+          <table class="horaires">
+            <tr><td>Lundi</td><td>Fermé</td></tr>
+            <tr><td>Mardi – Vendredi</td><td>9h – 19h</td></tr>
+            <tr><td>Samedi</td><td>9h – 17h</td></tr>
+            <tr><td>Dimanche</td><td>Fermé</td></tr>
+          </table>
+        </div>
+        <div class="carte">
+          <h3>Rendez-vous</h3>
+          <p>Téléphone : <a href="tel:+33400000000">04 00 00 00 00</a></p>
+          <p>E-mail : <a href="mailto:contact@barbier-traboules.fr">contact@barbier-traboules.fr</a></p>
+          <p style="margin-top:12px">Sans rendez-vous selon disponibilités.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Le Barbier des Traboules — Lyon
+  </footer>
+
+</body>
+</html>
